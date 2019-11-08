@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+</head>
+<body>
+    {% block content %}
+    
+        <h2>{{ post.title }}</h2>
+        
+        <img src="{{ post.image.url }}" alt="">
+        <p>{{ post.text }}</p>
+        <p>{{ post.created_on }}</p>
+        <hr>
+
+        {% for comment in comments %}
+        <p><h3>{{ comment.author }}</h3></p>
+        <p>{{ comment.comment}}</p>
+        {% endfor %}
+    
+
+    {% endblock %}
+</body>
+</html>
